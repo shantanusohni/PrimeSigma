@@ -1,0 +1,170 @@
+
+
+.mistareas {
+    .collapsed-content {
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+    .p-toolbar{
+        padding: 1px;
+        margin-bottom: 5px;
+        
+    }
+    
+    
+    .pi-bookmark{
+        color: #89a1e6;
+    }
+    .pi-envelope{
+        color: #096811;
+    }
+    .pi-paperclip{
+        color: #5c6069;
+    }
+    .pi-info-circle{
+        color: #0c0547;
+    }
+    .pi-question-circle{
+        color: #c4980a;
+    }
+    .pi-mobile{
+        color: #9b0b70;
+    }
+    .pi-briefcase{
+        color: #4319da;
+    }
+    .p-panel {
+        .p-panel-content{
+        padding: 0.571em .5em;
+    }}
+    
+    .p-link-hover:hover{    
+        cursor: pointer;
+        background-color: #e25656;}    
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        .pi {
+            font-size: 2em;
+        } 
+        li {
+            border-bottom: 1px solid $dividerColor;
+            
+            .task {
+                padding-bottom: 6px;
+                width: 100%;
+                //height: 65px;
+                
+                box-sizing: border-box;
+                text-decoration: none;
+                overflow-y:hidden;
+                position: relative;
+                display: block;
+                @include border-radius(2px);
+                @include transition(background-color .2s);
+                
+                .cliente {
+                    position: absolute;
+                    left: 30px;
+                    top: 0px;
+                    font-size: 14px;
+                }
+                
+                .comment {
+                    //position: absolute;
+                    margin-left: 30px;
+                    overflow-y:auto ;
+                    font-size: 12px;
+                    top:18px;
+                    color: $textSecondaryColor;         
+                }
+
+                
+
+                
+                
+                
+                &:hover {
+                    cursor: pointer;
+                    background-color: #e25656;
+                }
+            }
+            
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+
+    .p-panel-content {
+        min-height: 256px;
+    }
+}
+
+//  body form {
+    // .p-button{
+    .p-button-success2{
+        background-color: #eb0606 !important;
+    }
+    .p-button-success2:enabled:hover{
+        background-color: #fd1d1d !important;
+    }
+    .p-button-danger2{
+        background-color: #751111 !important;
+        
+    }
+    .p-button-danger2:enabled:hover{
+        background-color: #af1111 !important;
+    }
+// }
+// }
+
+.label-info{
+    // font-size: 12px;
+    span {
+        font-weight: bold;
+    }
+}
+
+.pointerLink:hover{    
+    cursor: pointer;
+    color: #eb0606;
+    // background-color: #e25656;
+}
+
+.tasasNews .highlight-box {
+    height: 54px;
+    .initials{
+        height: 100%;
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 6px;
+        span {
+            font-size: 30px;
+        }
+    }
+    .highlight-details {
+        height: 100%;
+        background-color: #ffffff;
+        float: left;
+        width: 50%;
+        padding: 6px;
+        i {
+            font-size: 16px;
+            vertical-align: middle;
+            margin-right: .25em;
+        }
+        .count {
+            color: #707070;
+            font-size: 24px;
+            float: right;
+            display: block;
+            // margin-top: 15px;
+        }
+
+    }
+}

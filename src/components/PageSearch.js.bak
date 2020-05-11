@@ -1,0 +1,51 @@
+import { InputText } from 'primereact/inputtext';
+import React, {Component } from 'react';
+
+//function PageSearch() {
+var pageSearchInstance ;
+class PageSearch extends Component {
+
+    constructor(props){
+        super(props);
+        pageSearchInstance = this;
+        //console.log('constructor pageSearch.js');
+    }
+    //static searchCallback = null;
+    static setPageSearchCallback(fn) {
+        //this.searchCallback = fn;
+       // console.log('se establecio el callback en pageSearch.js');
+        // console.log(fn);
+        // console.log(this.searchCallback);
+        pageSearchInstance.setState({searchCallback:fn});
+    }
+    state = {
+        searchCallback:null,
+        searchString: ''
+    };
+
+    handleInputKeyPress = event => {
+        if ('Enter' === event.key) {
+            event.preventDefault();
+            this.handlePageSearch(this.state.searchString);
+        }
+    }
+
+    handlePageSearch = searchString => {
+        this.setState({ searchString })
+        //console.log("pageSearch.js handlePageSearch= ", searchString);
+        let fn = this.state.searchCallback;
+        fn && fn(searchString);
+
+       
+    }
+    render() {
+        return (
+            <span className="layout-topbar-search">
+                <InputText type="text" placeholder="Search" value={this.state.searchString} onChange={event => { this.setState({searchString:event.target.value}); }} onKeyPress={this.handleInputKeyPress} />
+                <span className="layout-topbar-search-icon pi pi-search" />
+            </span>
+        );
+    }
+}
+
+export default PageSearch;
