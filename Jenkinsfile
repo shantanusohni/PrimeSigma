@@ -15,7 +15,7 @@ pipeline {
         stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("cooldsachin/primesigma:${env.BUILD_ID}")
+                    myapp = docker.build("cooldsachin/sigma-react:${env.BUILD_ID}")
                 }
             }
         }
