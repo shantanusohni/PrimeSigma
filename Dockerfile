@@ -30,8 +30,3 @@ COPY --from=builder /sigma-react-ui/build /usr/share/nginx/html
 EXPOSE 3000 80
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-
-FROM clue/json-server:latest
-
-COPY data.json /data/data.json
-COPY data.json /data/articles.json
