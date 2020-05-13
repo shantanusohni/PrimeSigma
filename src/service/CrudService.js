@@ -5,7 +5,7 @@ import axios from 'axios';
  export default class CrudService{
     constructor(props){
         this.requestHelper = axios.create({
-         baseURL: `http://localhost:3001/${props.url}`
+         baseURL: `/${props.url}`
         });
     }
 

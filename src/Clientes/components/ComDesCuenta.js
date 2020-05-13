@@ -104,7 +104,7 @@ export default function ComDesCuenta (props){
                 <LabelInfo label="Periodo liquidacion" info={cuenta.periodoLiquidacion}/>
                 <LabelInfo label="Cantidad cheques" info={cuenta.CantidadCheques}/>
                 <div className="p-col-12 p-md-4" style={{textAlign:'center'}}>
-                <Button label="modificar" style={{marginBottom:'30px', width:'100px'}} className="p-button-success p-button-rounded" onClick={modificarProduto}/>
+                {/* <Button label="modificar" style={{marginBottom:'30px', width:'100px'}} className="p-button-success p-button-rounded" onClick={modificarProduto}/> */}
                 </div>
                 <div>
                    { tasasProducto && tasas &&  
