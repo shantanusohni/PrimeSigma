@@ -1,6 +1,8 @@
 # stage1 as builder
 FROM node:10-alpine as builder
 
+ENV NODE_ENV="production"
+
 # copy the package.json to install dependencies
 COPY package.json package-lock.json ./
 COPY data.json ./
