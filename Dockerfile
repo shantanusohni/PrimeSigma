@@ -27,6 +27,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy from the stahg 1
 COPY --from=builder /sigma-react-ui/build /usr/share/nginx/html
+COPY --from=builder /sigma-react-ui/data.json /usr/share/nginx
 
 EXPOSE 3000 80
 
