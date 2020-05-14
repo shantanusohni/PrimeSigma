@@ -14,6 +14,6 @@ COPY . .
 RUN npm run build
 
 RUN npm install -g json-server
-CMD [ "npm", "start" ]
+RUN -d json-server --watch data.json --port 3000 --static ./build
 
 EXPOSE 3000 80
