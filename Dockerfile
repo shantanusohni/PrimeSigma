@@ -18,6 +18,6 @@ RUN ls
 
 RUN npm install -g json-server
 
-CMD ["json-server", "--watch data.json", "--port 3000", "--static ./build" ]
+CMD ["json-server", "data.json", "--port 3000", "--static ./build" ]
 
 EXPOSE 3000 80
