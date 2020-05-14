@@ -31,7 +31,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "api": "json-server --watch data.json --port 3000 --static ./build"
+        "api": "json-server --watch data.json --port 3000 --static ./html"
     },
     "eslintConfig": {
         "extends": "react-app"
