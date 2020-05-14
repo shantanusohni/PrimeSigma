@@ -13,6 +13,9 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
+RUN pwd
+RUN ls
+
 RUN npm install -g json-server
 CMD [ "npm", "run", "api"]
 
