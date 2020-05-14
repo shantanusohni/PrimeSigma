@@ -17,6 +17,6 @@ RUN npm run build
 
 RUN ls
 
-CMD ["node", "server.js"]
+RUN node server.js
 
 EXPOSE 3000 80
