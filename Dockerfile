@@ -16,9 +16,8 @@ COPY . .
 RUN npm run build
 
 RUN ls
-
-EXPOSE 3000 80
+RUN node -v
 
 CMD ["node", "server.js"]
 
-
+EXPOSE 3000 80
