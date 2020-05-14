@@ -6,15 +6,14 @@ COPY package.json package-lock.json ./
 COPY data.json ./
 
 # Install the dependencies and make the folder
-RUN npm install && mkdir /sigma-react-ui && mv ./node_modules ./sigma-react-ui
-
-WORKDIR /sigma-react-ui
+RUN npm install 
 
 COPY . .
 
 # Build the project and copy the files
 RUN npm run build
 
+RUN npm install -g json-server
 RUN json-server --watch data.json --port 3000 --static ./build
 
 EXPOSE 3000
