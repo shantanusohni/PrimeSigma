@@ -13,11 +13,8 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
-RUN pwd
-RUN ls
-
 RUN npm install -g json-server
 
-CMD ["json-server", "data.json", "--port 3000", "--static ./build" ]
+CMD ["node", "server.js"]
 
 EXPOSE 3000 80
