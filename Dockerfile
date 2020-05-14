@@ -31,4 +31,5 @@ COPY --from=builder /sigma-react-ui/data.json /usr/share/nginx
 
 EXPOSE 3000 80
 
+CMD ["nginx/data.json"]
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
