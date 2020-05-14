@@ -14,6 +14,6 @@ COPY . .
 RUN npm run build
 
 RUN npm install -g json-server
-CMD [ "npm", "api" ]
+CMD [ "npm", "start" ]
 
-EXPOSE 3000
+EXPOSE 3000 80
