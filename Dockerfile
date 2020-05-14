@@ -30,7 +30,7 @@ COPY --from=builder /sigma-react-ui/data.json /usr/share/nginx
 
 WORKDIR /usr/share/nginx
 
-CMD ["json-server","--watch data.json --port 3000 --static ./html"]
+RUN json-server --watch data.json --port 3000 --static ./html
 
 EXPOSE 3000 80
 
