@@ -15,8 +15,6 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
-CMD ["node","api"]
-
 FROM nginx:alpine
 
 #!/bin/sh
@@ -29,6 +27,8 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy from the stahg 1
 COPY --from=builder /sigma-react-ui/build /usr/share/nginx/html
 COPY --from=builder /sigma-react-ui/data.json /usr/share/nginx
+
+CMD ["node","api"]
 
 EXPOSE 3000 80
 
