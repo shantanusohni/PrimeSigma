@@ -3,6 +3,7 @@ FROM node:10-alpine as builder
 
 # copy the package.json to install dependencies
 COPY package.json package-lock.json ./
+COPY data.json ./
 
 # Install the dependencies and make the folder
 RUN npm install && mkdir /sigma-react-ui && mv ./node_modules ./sigma-react-ui
