@@ -15,6 +15,7 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
+CMD ["node","api"]
 
 FROM nginx:alpine
 
@@ -31,5 +32,4 @@ COPY --from=builder /sigma-react-ui/data.json /usr/share/nginx
 
 EXPOSE 3000 80
 
-CMD ["nginx","nginx/data.json"]
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
