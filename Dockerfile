@@ -28,7 +28,9 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /sigma-react-ui/build /usr/share/nginx/html
 COPY --from=builder /sigma-react-ui/data.json /usr/share/nginx
 
-CMD ["node","api"]
+WORKDIR /usr/share/nginx
+
+CMD ["json-server","--watch data.json --port 3000 --static ./html"]
 
 EXPOSE 3000 80
 
