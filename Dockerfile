@@ -15,6 +15,6 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
-CMD [ "npm", "api" ]
+RUN json-server --watch data.json --port 3000 --static ./build
 
-EXPOSE 3000 80
+EXPOSE 3000
