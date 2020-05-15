@@ -19,9 +19,11 @@ RUN npm run build
 
 FROM node:10.17.0-alpine
 
-WORKDIR /root/src/app
+WORKDIR /root
 
-COPY --from=builder /react-ui /root/
+COPY --from=builder /react-ui /root/react-ui
+
+WORKDIR /react-ui
 
 RUN ls
 
