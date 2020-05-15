@@ -17,9 +17,14 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
+FROM node:10.17.0-alpine
+
+WORKDIR /root/src/app
+
+COPY --from=builder /react-ui /root/
+
 RUN ls
-RUN node -v
 
 EXPOSE 3000 80
 
-ENTRYPOINT npm start
+ENTRYPOINT ["node","server.js"]
