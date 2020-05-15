@@ -20,6 +20,6 @@ RUN npm run build
 RUN ls
 RUN node -v
 
-CMD ["npm", "start"]
-
 EXPOSE 3000 80
+
+ENTRYPOINT npm start
