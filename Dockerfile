@@ -1,8 +1,6 @@
 # stage1 as builder
 FROM node:10-alpine as builder
 
-ENV NODE_ENV="production"
-
 # copy the package.json to install dependencies
 COPY package.json package-lock.json ./
 COPY data.json ./
@@ -17,16 +15,20 @@ COPY . .
 # Build the project and copy the files
 RUN npm run build
 
-FROM node:10.17.0-alpine
+FROM nginx:alpine
 
-WORKDIR /root
+#!/bin/sh
 
-COPY --from=builder /react-ui /root/react-ui
+COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 
-WORKDIR /react-ui
+## Remove default nginx index page
+RUN rm -rf /usr/share/nginx/html/*
 
-RUN ls
+# Copy from the stahg 1
+COPY --from=builder /sigma-react-ui/build /usr/share/nginx/html
+
+WORKDIR /usr/share/nginx
 
 EXPOSE 3000 80
 
-ENTRYPOINT ["node","server.js"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
