@@ -32,7 +32,7 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "start": "node server.js",
-        "api": "json-server --watch data.json --port 3000 --static ./usr/share/nginx/html/build"
+        "api": "json-server --watch data.json --port 3000 --static ./react-ui/build"
     },
     "eslintConfig": {
         "extends": "react-app"
