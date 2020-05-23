@@ -29,7 +29,7 @@ COPY --from=builder /react-ui/build /usr/share/nginx/html
 
 COPY node-app ./etc/nginx/sites-available/
 
-RUN ln -s /etc/nginx/sites-available/node-app /etc/nginx/sites-enabled/node-app
+#RUN ln -s /etc/nginx/sites-available/node-app /etc/nginx/sites-enabled/node-app
 
 EXPOSE 80
 EXPOSE 3000

@@ -29,10 +29,10 @@
     "scripts": {
         "start1": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "test": "ng build",
         "eject": "react-scripts eject",
         "start": "node server.js",
-        "api": "json-server --watch data.json --port 3000 --static ./react-ui/build"
+        "api": "json-server --watch data.json --port 3000 --static ./build"
     },
     "eslintConfig": {
         "extends": "react-app"
